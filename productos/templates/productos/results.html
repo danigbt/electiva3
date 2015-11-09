@@ -1,0 +1,76 @@
+{% if results|length %}
+ 
+            {% load humanize %}
+            
+            
+         
+            <div class="row linea-cajas">
+                {% for producto in results %}
+                <div class="caja-producto col-lg-3">
+                    <div class="producto-imagen">
+                        <img src="{{producto.imagen.url}}" alt="">
+                    </div>
+                        
+                    <div class="sub-imagen">
+                        <p class="nombre">{{producto.nombre}}</p>
+                        <p class="precio">&#8370; {{producto.precio|intcomma}}</p>
+                        <a id="categoria_{{producto.categoria.id}}" data="{{producto.categoria.id}}" class="categoria pull-left btn">{{producto.categoria}}</a>
+                        <a id="marca_{{producto.marca.id}}" data="{{producto.marca.id}}" class="marca pull-right btn">{{producto.marca}}</a>
+                    </div> 
+                    
+                </div>
+                {% endfor %}
+            </div>
+        <strong>Encontrados {{ results|length }} productos</strong>
+{% else %}
+    <div class="note">
+        Su búsqueda no produjo resultados
+    </div>
+{% endif %}
+{% block js %}
+    
+        {% load staticfiles %}
+        <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+    
+        <script src="{% static 'js/contacto.js' %}"></script>
+        
+        <script type="text/javascript">
+            $( document ).ready( function() {
+                $( '#searchSubmit' ).click( function() {
+                    q = $( '#q' ).val();
+                    console.log(q);
+                    /*$( '#results' ).load("{% url 'productos_ajax' %}");*/
+                    $( '#results' ).load( "{% url 'productos_ajax' %}?q=" + q,
+                        function(data){
+                            /*alert(data);*/
+                        });
+                });
+                $( '.categoria' ).click( function() {
+                    id_cat = $( this ).attr("data");
+                    console.log(id_cat);
+                    /*$( '#results' ).load("{% url 'productos_ajax' %}");*/
+                    $( '#results' ).load( "{% url 'productos_ajax_cat' %}?id_cat=" + id_cat,
+                        function(data){
+                            /*alert(data);*/
+                        });
+                });
+                $( '.marca' ).click( function() {
+                    id_mar = $( this ).attr("data");
+                    console.log(id_mar);
+                    /*$( '#results' ).load("{% url 'productos_ajax' %}");*/
+                    $( '#results' ).load( "{% url 'productos_ajax_mar' %}?id_mar=" + id_mar,
+                        function(data){
+                            /*alert(data);*/
+                        });
+                });
+            });
+                 
+            $( document ).ajaxStart( function() {
+                $( '#spinner' ).show();
+            }).ajaxStop( function() {
+                $( '#spinner' ).hide();
+            });
+        </script>
+    
+    
+    {% endblock js %}

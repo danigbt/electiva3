@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+    {% block title %} <title>Gonzalez Gimenez</title>{% endblock %}
+    
+
+        
+    {% block content %}
+    {% load staticfiles %}
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="{% static 'img/gg-logo.png' %}"> <span class="light">GONZALEZ GIMENEZ</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll"><a href="#quienes-somos">Quienes somos</a></li>
+                    <li class="page-scroll"><a href="#donde-estamos">Donde estamos</a></li>
+                    <li class="page-scroll"><a href="#contacto">Contacto</a></li>
+                    <li class="page-scroll"><a href="{% url 'productos' %}#productos">Productos</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>   
+    
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Gonzalez Gimenez</h1>
+                        <p class="intro-text">La felicidad al alcance de todos.</p>
+                        <a href="#quienes-somos" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section id="quienes-somos" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Quiénes somos</h2>
+                <p>Tan próximo como importante e histórico, representa para nosotros el 31 de octubre de 1952, día en que Don Ovidio González Giménez dio inicio oficial a las actividades de la empresa.</p>
+                <p>
+                Es mucho más que un largo camino el que hemos recorrido desde esa fecha, cuando un joven oriundo de la ciudad de Carapeguá (el menor de los seis hermanos que conformaban la familia), decidió abocarse de lleno a la actividad comercial en Asunción, capital del país.
+                </p>
+                <p>
+                Comenzamos con la importación de Cubiertas, Whiskys y Juguetes, para luego ser uno de los pioneros en comercializar electrodomésticos en nuestro medio, con las primeras radios y tocadiscos a transistores, pilas, bombillas eléctricas y heladeras a kerosén. Ya en esa época, y con el orgullo de seguir hasta hoy, obtuvimos la representación exclusiva de la reconocida marca japonesa KDK, cuyos productos son altamente valorados a nivel mundial, por su tradición de calidad.
+                </p>
+                <p>
+                Con una visión de negocios bien definida, a través del novedoso sistema de compra financiada totalmente innovador para su época, se consolidaron los cimientos sobre los cuales nos formamos y seguimos creciendo.
+                </p>
+                <p>
+                Hoy, con quince locales estratégicamente ubicados, pensados para abarcar los diferentes segmentos de mercado y desde donde ofrecemos la mayor variedad de electrodomésticos, muebles, artículos de informática y entretenimiento, de las mejores marcas del mundo, trazamos las pautas y somos los líderes del rubro en Paraguay.
+                </p>
+                <p>
+                Somos González Giménez y Cia. y mantenemos día a día con responsabilidad social, la firme convicción de que el trabajo honesto y constante, es el motor de empuje necesario para el desarrollo de una Nación.
+                </p>
+                <p>
+                González Giménez y Cia., LA FELICIDAD AL ALCANCE DE TODOS.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where Section -->
+    <section id="donde-estamos" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Dónde estamos</h2>
+            </div>
+                    <!-- Map Section -->
+                    
+                        <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJK0GwC--nXZQRqaJ2ntX-B3o&key=AIzaSyDySztceaLf6tGpd8KJ9eWezRqOe430g8I" allowfullscreen></iframe>
+                    
+            
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contacto" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contacto</h2>
+                
+
+                <form name="sentMessage" id="contactForm" method="POST" novalidate>
+                    {% csrf_token %}
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Ingrese su nombre.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="Email" id="email" required="" data-validation-required-message="Ingrese su email." data-validation-email-message="No es un email válido.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Mensaje</label>
+                            <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required="" data-validation-required-message="Ingrese su mensaje."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+
+                <p>Contáctenos ante cualquier duda o sugerencia a:</p>
+                <p><a href="mailto:contacto@gonzalezgimenez.com.py">contacto@gonzalezgimenez.com.py</a>
+                
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/grupogonzalezg" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Grupo-Gonzalez-Gimenez-y-Cia-SAC-264431060258488/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+
+                
+                
+            </div>
+        </div>
+    </section>
+    {% endblock content %}
+        
+    {% block js %}
+        
+    {% load staticfiles %}
+        <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+    
+        <script src="{% static 'js/contacto.js' %}"></script>
+    
+    
+    
+    {% endblock js %}

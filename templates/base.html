@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %} {% endblock %}
+    {% load staticfiles %}
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    
+
+    {% block content %}
+        
+    {% endblock content %}
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="social">
+                <ul class="social-links">
+                  <li class="facebook"><a  href="https://www.facebook.com/Grupo-Gonzalez-Gimenez-y-Cia-SAC-264431060258488/" rel="nofollow"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+                  <li class="twitter"><a  href="https://twitter.com/grupogonzalezg" rel="nofollow"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+                  <li class="google-plus" ><a href="https://plus.google.com" rel="publisher"><i class="fa fa-google-plus-square fa-3x"></i></a></li>
+                  
+                </ul>
+            </div>
+            <p>Copyright &copy; Gonzalez Gimenez 2015</p>
+        </div>
+    </footer>
+        
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    {% block js %}
+        
+    {% endblock js %}
+</body>
+</html>

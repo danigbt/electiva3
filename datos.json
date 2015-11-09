@@ -1,0 +1,727 @@
+[
+{
+    "fields": {
+        "model": "logentry",
+        "app_label": "admin"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 1
+},
+{
+    "fields": {
+        "model": "permission",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 2
+},
+{
+    "fields": {
+        "model": "group",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 3
+},
+{
+    "fields": {
+        "model": "user",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 4
+},
+{
+    "fields": {
+        "model": "contenttype",
+        "app_label": "contenttypes"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 5
+},
+{
+    "fields": {
+        "model": "session",
+        "app_label": "sessions"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 6
+},
+{
+    "fields": {
+        "model": "marca",
+        "app_label": "productos"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 7
+},
+{
+    "fields": {
+        "model": "categoria",
+        "app_label": "productos"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 8
+},
+{
+    "fields": {
+        "model": "producto",
+        "app_label": "productos"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 9
+},
+{
+    "fields": {
+        "expire_date": "2015-11-23T00:23:20.702Z",
+        "session_data": "NmI3YjA0YmJiYTM3YmI2ZTdjYjM4Yjk2NzlmZDA0NTU1YTMyZTdhYTp7Il9hdXRoX3VzZXJfaGFzaCI6ImRiMGZhNGRhMjZlMGMyZTk1ZGJhZWYzMWY5ZTk0NjQxYjk5ZmJjNDAiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+    },
+    "model": "sessions.session",
+    "pk": "7jan26fpbox8am5yqehkukutyuyd1yoe"
+},
+{
+    "fields": {
+        "nombre": "Sony"
+    },
+    "model": "productos.marca",
+    "pk": 1
+},
+{
+    "fields": {
+        "nombre": "Samsung"
+    },
+    "model": "productos.marca",
+    "pk": 2
+},
+{
+    "fields": {
+        "nombre": "Televisores"
+    },
+    "model": "productos.categoria",
+    "pk": 1
+},
+{
+    "fields": {
+        "nombre": "Celulares"
+    },
+    "model": "productos.categoria",
+    "pk": 2
+},
+{
+    "fields": {
+        "categoria": 2,
+        "imagen": "imagenes/samsungs6.jpg",
+        "precio": 3500000,
+        "marca": 2,
+        "descripcion": "Smartphone Samsung Galaxy S6",
+        "nombre": "Samsung Galaxy S6"
+    },
+    "model": "productos.producto",
+    "pk": 1
+},
+{
+    "fields": {
+        "categoria": 2,
+        "imagen": "imagenes/samsungs5.jpg",
+        "precio": 2300000,
+        "marca": 2,
+        "descripcion": "Smartphone Samsung Galaxy S5",
+        "nombre": "Samsung Galaxy S5"
+    },
+    "model": "productos.producto",
+    "pk": 2
+},
+{
+    "fields": {
+        "categoria": 1,
+        "imagen": "imagenes/sony40.jpg",
+        "precio": 5200000,
+        "marca": 1,
+        "descripcion": "Televisor Sony Bravia 40\" SmartTV",
+        "nombre": "Tv Sony Bravia 40\""
+    },
+    "model": "productos.producto",
+    "pk": 3
+},
+{
+    "fields": {
+        "categoria": 1,
+        "imagen": "imagenes/sony32.jpg",
+        "precio": 4000000,
+        "marca": 1,
+        "descripcion": "Televisor Sony Bravia 32\" SmartTV",
+        "nombre": "Tv Sony Bravia 32\""
+    },
+    "model": "productos.producto",
+    "pk": 4
+},
+{
+    "fields": {
+        "categoria": 1,
+        "imagen": "imagenes/tvSamsung50.jpg",
+        "precio": 10000000,
+        "marca": 2,
+        "descripcion": "Televisor Samsung UltraHD 50\" SmartTV",
+        "nombre": "Tv Samsung UHD 50\""
+    },
+    "model": "productos.producto",
+    "pk": 5
+},
+{
+    "fields": {
+        "categoria": 1,
+        "imagen": "imagenes/tvsamsung65.jpg",
+        "precio": 13000000,
+        "marca": 2,
+        "descripcion": "Televisor Samsung Curvo UltraHD 65\" SmartTV",
+        "nombre": "Tv Samsung Curvo UHD 65\""
+    },
+    "model": "productos.producto",
+    "pk": 6
+},
+{
+    "fields": {
+        "categoria": 2,
+        "imagen": "imagenes/sonyz5.png",
+        "precio": 5000000,
+        "marca": 1,
+        "descripcion": "Smartphone Sony Xperia Z5",
+        "nombre": "Sony Xperia Z5"
+    },
+    "model": "productos.producto",
+    "pk": 7
+},
+{
+    "fields": {
+        "categoria": 2,
+        "imagen": "imagenes/sonym5.jpg",
+        "precio": 4200000,
+        "marca": 1,
+        "descripcion": "Smartphone Sony Xperia M5",
+        "nombre": "Sony Xperia M5"
+    },
+    "model": "productos.producto",
+    "pk": 8
+},
+{
+    "fields": {
+        "codename": "add_logentry",
+        "name": "Can add log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 1
+},
+{
+    "fields": {
+        "codename": "change_logentry",
+        "name": "Can change log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 2
+},
+{
+    "fields": {
+        "codename": "delete_logentry",
+        "name": "Can delete log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 3
+},
+{
+    "fields": {
+        "codename": "add_permission",
+        "name": "Can add permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 4
+},
+{
+    "fields": {
+        "codename": "change_permission",
+        "name": "Can change permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 5
+},
+{
+    "fields": {
+        "codename": "delete_permission",
+        "name": "Can delete permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 6
+},
+{
+    "fields": {
+        "codename": "add_group",
+        "name": "Can add group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 7
+},
+{
+    "fields": {
+        "codename": "change_group",
+        "name": "Can change group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 8
+},
+{
+    "fields": {
+        "codename": "delete_group",
+        "name": "Can delete group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 9
+},
+{
+    "fields": {
+        "codename": "add_user",
+        "name": "Can add user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 10
+},
+{
+    "fields": {
+        "codename": "change_user",
+        "name": "Can change user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 11
+},
+{
+    "fields": {
+        "codename": "delete_user",
+        "name": "Can delete user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 12
+},
+{
+    "fields": {
+        "codename": "add_contenttype",
+        "name": "Can add content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 13
+},
+{
+    "fields": {
+        "codename": "change_contenttype",
+        "name": "Can change content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 14
+},
+{
+    "fields": {
+        "codename": "delete_contenttype",
+        "name": "Can delete content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 15
+},
+{
+    "fields": {
+        "codename": "add_session",
+        "name": "Can add session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 16
+},
+{
+    "fields": {
+        "codename": "change_session",
+        "name": "Can change session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 17
+},
+{
+    "fields": {
+        "codename": "delete_session",
+        "name": "Can delete session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 18
+},
+{
+    "fields": {
+        "codename": "add_marca",
+        "name": "Can add Marca",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 19
+},
+{
+    "fields": {
+        "codename": "change_marca",
+        "name": "Can change Marca",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 20
+},
+{
+    "fields": {
+        "codename": "delete_marca",
+        "name": "Can delete Marca",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 21
+},
+{
+    "fields": {
+        "codename": "add_categoria",
+        "name": "Can add Categoria",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 22
+},
+{
+    "fields": {
+        "codename": "change_categoria",
+        "name": "Can change Categoria",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 23
+},
+{
+    "fields": {
+        "codename": "delete_categoria",
+        "name": "Can delete Categoria",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 24
+},
+{
+    "fields": {
+        "codename": "add_producto",
+        "name": "Can add Producto",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 25
+},
+{
+    "fields": {
+        "codename": "change_producto",
+        "name": "Can change Producto",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 26
+},
+{
+    "fields": {
+        "codename": "delete_producto",
+        "name": "Can delete Producto",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 27
+},
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-11-09T00:23:20.578Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$stf0xeWgaDI2$iJR16Wul3+D/zYTm77TUp8sH03F/iZ/w8dd4X+SERqo=",
+        "email": "admin@admin.com",
+        "date_joined": "2015-11-09T00:23:04.680Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:23:34.509Z",
+        "object_repr": "Sony",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:23:42.699Z",
+        "object_repr": "Samsung",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 2
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:24:02.528Z",
+        "object_repr": "Televisores",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 8
+    },
+    "model": "admin.logentry",
+    "pk": 3
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:24:12.634Z",
+        "object_repr": "Celulares",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 8
+    },
+    "model": "admin.logentry",
+    "pk": 4
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:33:57.994Z",
+        "object_repr": "Samsung Galaxy S6",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 5
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:34:32.165Z",
+        "object_repr": "Samsung Galaxy S5",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 6
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:35:52.189Z",
+        "object_repr": "Tv Sony Bravia 40\"",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 7
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:36:27.467Z",
+        "object_repr": "Tv Sony Bravia 32\"",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 8
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:39:15.391Z",
+        "object_repr": "Tv Samsung UHD 50\"",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 9
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:40:25.961Z",
+        "object_repr": "Tv Samsung Curvo UHD 65\"",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 10
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:41:58.159Z",
+        "object_repr": "Sony Xperia Z5",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 11
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-11-09T00:42:31.651Z",
+        "object_repr": "Sony Xperia M5",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 12
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:22:43.152Z",
+        "object_repr": "Samsung Galaxy S6",
+        "object_id": "1",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 13
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:22:53.848Z",
+        "object_repr": "Samsung Galaxy S5",
+        "object_id": "2",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 14
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:23:05.029Z",
+        "object_repr": "Tv Sony Bravia 40\"",
+        "object_id": "3",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 15
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:23:17.492Z",
+        "object_repr": "Tv Sony Bravia 32\"",
+        "object_id": "4",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 16
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:23:32.738Z",
+        "object_repr": "Tv Samsung UHD 50\"",
+        "object_id": "5",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 17
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:23:41.633Z",
+        "object_repr": "Tv Samsung Curvo UHD 65\"",
+        "object_id": "6",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 18
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:23:55.596Z",
+        "object_repr": "Sony Xperia Z5",
+        "object_id": "7",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 19
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-11-09T03:24:06.381Z",
+        "object_repr": "Sony Xperia M5",
+        "object_id": "8",
+        "change_message": "Changed imagen.",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 20
+}
+]

@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+    {% block title %} <title>Productos</title>{% endblock %}
+
+
+        
+    {% block content %}
+    {% load staticfiles %}
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="{% url 'index' %}#page-top">
+                    <img src="{% static 'img/gg-logo.png' %}"> <span class="light">GONZALEZ GIMENEZ</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll"><a href="{% url 'index' %}#quienes-somos">Quienes somos</a></li>
+                    <li class="page-scroll"><a href="{% url 'index' %}#donde-estamos">Donde estamos</a></li>
+                    <li class="page-scroll"><a href="{% url 'index' %}#contacto">Contacto</a></li>
+                    <li class="page-scroll"><a href="#productos">Productos</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	    <!-- About Section -->
+	    <section id="productos" class="container content-section text-center">
+	        <div class="row">
+	            <div class="col-lg-8 col-lg-offset-2">
+	                <h2>Productos</h2>
+	                <div>
+						
+						<div class="row control-group">
+	                        <div class="form-group col-xs-7 col-lg-offset-2 floating-label-form-group controls">
+	                            <input type="text" class="form-control" id="q" required data-validation-required-message="Ingrese algo para buscar.">
+	                            <p class="help-block text-danger"></p>
+	                        </div>
+
+	                        <div class="form-group col-xs-2">
+                            	<button type="submit" id="searchSubmit" class="btn btn-primary btn-lg">Buscar</button>
+                        	</div>
+	                        
+                    	</div>
+                    	<span class="hint">Puede buscar por nombre, marca o categoría.</span>
+						
+					</div>
+	                
+	                
+	            </div>
+				<div class="row">
+				<div class="barra col-lg-8 col-lg-offset-2">
+					<div class="column">
+					<div><span class="pull-left titulo-barra">Categorias:</span></div>
+					<a href="{% url 'productos' %}" class="todos btn pull-left">Todos</a>
+					{% for categoria in categorias %}
+						<a id="categoria_{{categoria.id}}" data="{{categoria.id}}" class=" categoria btn">{{categoria.nombre}}</a>
+					{% endfor %}
+					
+					</div>
+					<div class="column">
+					<div><span class="pull-left titulo-barra">Marcas:</span></div>
+					<a href="{% url 'productos' %}" class="todos btn pull-left">Todos</a>
+					{% for marca in marcas %}
+					<a id="marca_{{marca.id}}" data="{{marca.id}}" class="marca btn">{{marca.nombre}}</a>
+					{% endfor %}
+					</div>
+				</div>
+				</div>
+						{% load humanize %}
+
+						<div class="margin col-lg-11 col-lg-offset-1">
+							<span id="spinner"><img src="http://upload.wikimedia.org/wikipedia/commons/d/de/Ajax-loader.gif"/></span>
+							<div id="results">
+								
+									<div class="row linea-cajas">
+					                	{% for producto in productos %}
+					                	<div class="caja-producto col-lg-3">
+											<div class="producto-imagen">
+												<img src="{{producto.imagen.url}}" alt="">
+											</div>
+							                	
+							                <div class="sub-imagen">
+							                	<p class="nombre">{{producto.nombre}}</p>
+							                	<p class="precio">&#8370; {{producto.precio|intcomma}}</p>
+							                	<a id="categoria_{{producto.categoria.id}}" data="{{producto.categoria.id}}" class="categoria pull-left btn">{{producto.categoria}}</a>
+							                	<a id="marca_{{producto.marca.id}}" data="{{producto.marca.id}}" class="marca pull-right btn">{{producto.marca}}</a>
+							                </div>	
+						                	
+						                </div>
+						                {% endfor %}
+					                </div>
+				                
+							</div>
+						</div>
+					
+	        </div>
+	    </section>
+	{% endblock content %}
+
+    {% block js %}
+    
+    	{% load staticfiles %}
+        
+    	
+    	<script type="text/javascript">
+			$( document ).ready( function() {
+				$( '#searchSubmit' ).click( function() {
+					q = $( '#q' ).val();
+					console.log(q);
+					/*$( '#results' ).load("{% url 'productos_ajax' %}");*/
+					$( '#results' ).load( "{% url 'productos_ajax' %}?q=" + q,
+						function(data){
+							/*alert(data);*/
+						});
+				});
+				$( '.categoria' ).click( function() {
+					id_cat = $( this ).attr("data");
+					console.log(id_cat);
+					/*$( '#results' ).load("{% url 'productos_ajax' %}");*/
+					$( '#results' ).load( "{% url 'productos_ajax_cat' %}?id_cat=" + id_cat,
+						function(data){
+							/*alert(data);*/
+						});
+				});
+				$( '.marca' ).click( function() {
+					id_mar = $( this ).attr("data");
+					console.log(id_mar);
+					/*$( '#results' ).load("{% url 'productos_ajax' %}");*/
+					$( '#results' ).load( "{% url 'productos_ajax_mar' %}?id_mar=" + id_mar,
+						function(data){
+							/*alert(data);*/
+						});
+				});
+			});
+				 
+			$( document ).ajaxStart( function() {
+				$( '#spinner' ).show();
+			}).ajaxStop( function() {
+				$( '#spinner' ).hide();
+			});
+		</script>
+    
+    
+    {% endblock js %}
