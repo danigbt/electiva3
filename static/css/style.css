@@ -130,12 +130,14 @@ a.navbar-brand > img {
 .navbar-custom .nav li a:hover {
     outline: 0;
     color: rgba(255,255,255,.8);
+    background-color: rgba(255,255,255,.3);
     /*background-color: transparent;*/
 }
 
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a:active {
     outline: 0;
+    background-color: rgba(255,255,255,.3);
     /*background-color: transparent;*/
 }
 
@@ -499,7 +501,7 @@ form .row:first-child .floating-label-form-group {
   display: inline;
 }
 .producto-imagen {
-  height: 200px;
+  height: 170px;
   width: 100%;
   padding: 2px;
 }
@@ -508,7 +510,8 @@ form .row:first-child .floating-label-form-group {
   width: 100%;
 }
 .sub-imagen {
-  padding: 5px;
+  padding: 3px;
+  height: 130px;
 }
 .barra {
   display: block;
@@ -524,4 +527,58 @@ form .row:first-child .floating-label-form-group {
 .titulo-barra {
   padding: 2px;
 
+}
+.twitter-timeline, .contacto-container{
+  display: inline;
+}
+.boton-comprar{
+  width: 100%;
+}
+.caja-producto-compra{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.05);
+  background-color: #FFF;
+  height: 180px;
+  width: 500px;
+  padding: 0;
+}
+.producto-imagen-compra {
+  height: 180px;
+  width: 240px;
+  padding: 2px;
+  display: inline-block;
+}
+.producto-imagen-compra img {
+  height: 170px;
+  width: 240px;
+}
+.sub-imagen-compra {
+  padding: 3px;
+  height: 130px;
+  display: inline-block;
+  text-align: center;
+}
+.nombre-compra {
+  padding: 10px;
+  margin: 10px;
+}
+.precio-compra {
+  margin-top: 10px;
+  font-size: 2em;
+}
+.errorlist {
+  list-style: none;
+  color: #b94a48;
+  font-size: 20px;
+
+}
+.compra-productos {
+  padding-left: 50px;
+}
+.remover {
+  height: 30px;
+  width: 50px;
+  padding: 0;
+  display: inline-block;
 }

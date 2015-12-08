@@ -1,0 +1,9 @@
+Usuario:
+{{ contact_name }}
+
+Email:
+{{ contact_email }}
+
+Mensaje de compra:
+Usted realizo la compra de:<ul>
+{{ form_content|safe|striptags }}

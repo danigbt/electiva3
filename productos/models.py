@@ -1,4 +1,6 @@
+import datetime
 from django.db import models
+
 
 
 class Marca(models.Model):
@@ -37,5 +39,22 @@ class Producto(models.Model):
 
     def __unicode__(self):
         return self.nombre
-    
-        
+
+
+class Compra(models.Model):
+    usuario = models.CharField(max_length=140,null=True)
+    email = models.EmailField(null=True)
+    tarjeta = models.CharField(max_length=16,null=True)
+    direccion = models.CharField(max_length=250, null=True)
+    telefono = models.CharField(max_length=40, null=True)
+    producto = models.ManyToManyField(Producto)
+    total = models.IntegerField(null=True)
+    fecha = models.DateTimeField(auto_now_add=True)
+    comfirmada = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = "Compra"
+        verbose_name_plural = "Compras"
+
+    def __unicode__(self):
+        return "%s - %s" % (self.usuario, self.fecha)                

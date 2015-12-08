@@ -12,10 +12,15 @@
                     </div>
                         
                     <div class="sub-imagen">
-                        <p class="nombre">{{producto.nombre}}</p>
-                        <p class="precio">&#8370; {{producto.precio|intcomma}}</p>
-                        <a id="categoria_{{producto.categoria.id}}" data="{{producto.categoria.id}}" class="categoria pull-left btn">{{producto.categoria}}</a>
-                        <a id="marca_{{producto.marca.id}}" data="{{producto.marca.id}}" class="marca pull-right btn">{{producto.marca}}</a>
+                        <div>
+                            <p class="nombre">{{producto.nombre}}</p>
+                            <p class="precio">&#8370; {{producto.precio|intcomma}}</p>
+                            <a id="categoria_{{producto.categoria.id}}" data="{{producto.categoria.id}}" class="categoria pull-left btn">{{producto.categoria}}</a>
+                            <a id="marca_{{producto.marca.id}}" data="{{producto.marca.id}}" class="marca pull-right btn">{{producto.marca}}</a>
+                        </div>
+                        <div class="boton-comprar-div">
+                            <a href="{% url 'comprar' producto.pk %}" class="btn btn-primary boton-comprar">Comprar</a>
+                        </div>
                     </div> 
                     
                 </div>

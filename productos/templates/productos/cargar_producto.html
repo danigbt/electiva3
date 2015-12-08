@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+    {% block title %} <title>Productos</title>{% endblock %}
+
+
+        
+    {% block content %}
+    {% load staticfiles %}
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="{% url 'index' %}#page-top">
+                    <img src="{% static 'img/gg-logo.png' %}"> <span class="light">GONZALEZ GIMENEZ</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll"><a href="{% url 'index' %}#quienes-somos">Quienes somos</a></li>
+                    <li class="page-scroll"><a href="{% url 'index' %}#donde-estamos">Donde estamos</a></li>
+                    <li class="page-scroll"><a href="{% url 'index' %}#contacto">Contacto</a></li>
+                    <li class="page-scroll"><a href="{% url 'index' %}productos/#productos">Productos</a></li>
+                    <li class="page-scroll"><a href="{% url 'carro' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    {% load humanize %}
+	    <!-- About Section -->
+	    <section id="productos" class="container content-section text-center">
+	        <div class="row">
+	        	<h3>Cargar nuevo producto</h3>
+	            <div class="col-lg-9 col-lg-offset-1">
+	                <form enctype="multipart/form-data" name="sentMessage" id="contactForm" method="POST" novalidate>
+                    {% csrf_token %}
+
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Nombre</label>
+                            {{form.nombre.errors}}
+                    		{{form.nombre}}
+                            
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Descripción</label>
+                            {{form.descripcion.errors}}
+                    		{{form.descripcion}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div id="filesize_alert"></div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Imagen</label>
+                            <br>
+                            {{form.imagen.errors}}
+                    		{{form.imagen}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Marca</label>
+                            <br>
+                            {{form.marca.errors}}
+                    		{{form.marca}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Categoría</label>
+                            <br>
+                            {{form.categoria.errors}}
+                    		{{form.categoria}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Precio</label>
+                            {{form.precio.errors}}
+                            {{form.precio}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    	<div id="success"></div>
+	                    <div class="row">
+	                        <div class="form-group col-xs-12">
+	                            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+	                        </div>
+	                    </div>
+	                </form>
+				</div>
+				
+
+					
+					
+	        </div>
+	    </section>
+	{% endblock content %}
+
+    {% block js %}
+    
+        {% load staticfiles %}
+
+    <script type="text/javascript">
+    function readableFileSize(size) {
+        var units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        var i = 0;
+        while(size >= 1024) {
+            size /= 1024;
+            ++i;
+        }
+        return size.toFixed(1) + ' ' + units[i];
+    };
+    $('#id_imagen').on('change',function(){
+      if($(this).get(0).files.length > 0){ // solo si se selcciona el archivo
+        var fileSize = $(this).get(0).files[0].size;
+        console.log(fileSize);
+        var html = ""
+        if(fileSize > 2621440){
+            html += '<div class="alert alert-danger" role="alert">'+
+                    '<i class="fa fa-fw fa-warning"></i>'+
+                    '<span class="sr-only">Error:</span>'+
+                    'El archivo debe ser menor a 2.5 MB. Su archivo tiene '+ readableFileSize(fileSize)  +
+                    '.</div>';
+            var $el = $('#id_imagen');
+            $el.wrap('<form>').closest('form').get(0).reset();
+            $el.unwrap();
+        }
+        else{
+
+        }
+        $('#filesize_alert').html(html);
+      }
+    });
+    var ext = $('#id_imagen').val().split('.').pop().toLowerCase();
+    if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+        html += '<div class="alert alert-danger" role="alert">'+
+                    '<i class="fa fa-fw fa-warning"></i>'+
+                    '<span class="sr-only">Error:</span>'+
+                    'El tipo de imagen seleccionado no es compatible.'+
+                    '.</div>';
+        $('#filesize_alert').html(html);
+    };
+    </script>
+
+{% endblock js %}
